@@ -1,7 +1,7 @@
 import { useSelector } from "react-redux";
-import ArticlePending from "../component/articlePending/ArticlePending";
+// import ArticlePending from "../component/articlePending/ArticlePending";
 import ArticleFulfilled from "../component/articleFulfilled/ArticleFulfilled";
-import ArticleTitle from "../component/articleTitle/ArticleTitle";
+// import ArticleTitle from "../component/articleTitle/ArticleTitle";
 
 const ArticleSearchList = () => {
   const searchState = useSelector((state) => state.article);
