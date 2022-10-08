@@ -46,7 +46,7 @@ const MyNavbar = () => {
 
   return (
     <header className="bg-transparent absolute top-0 left-0 w-full flex items-center z-10 ">
-      <div className="container px-20">
+      <div className="container px-16 lg:px-20">
         <div className="flex items-center justify-between relative">
           <div className="px-4">
             {location === "/" ? (
