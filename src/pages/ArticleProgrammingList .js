@@ -1,13 +1,13 @@
 import { useEffect, useState } from "react";
-import { dataCovid } from "../features/dataJson";
+import { dataProgramming } from "../features/dataJson";
 import ArticleFulfilled from "../component/ArticleFulfilled";
 import ArticleTitle from "../component/ArticleTitle";
 import IsPending from "../component/IsPending";
 
-const ArticleCovid19List = () => {
+const ArticleProgrammingList = () => {
   const [article, setArticle] = useState(null);
   useEffect(() => {
-    dataCovid().then((res) => {
+    dataProgramming().then((res) => {
       setArticle(res);
     });
   }, []);
@@ -17,7 +17,7 @@ const ArticleCovid19List = () => {
       <section id="home" className="pt-24 pb-32">
         <div className="container px-20">
           {!article && <IsPending />}
-          {article && <ArticleTitle title="Covid-19" />}
+          {article && <ArticleTitle title="Programming" />}
           <div className="grid justify-center md:grid-cols-2 md:gap-8 xl:grid-cols-4">{article && article.map((articleFetch, index) => <ArticleFulfilled articleFetch={articleFetch} index={index} category="Indonesia" key={index} />)}</div>
         </div>
       </section>
@@ -25,4 +25,4 @@ const ArticleCovid19List = () => {
   );
 };
 
-export default ArticleCovid19List;
+export default ArticleProgrammingList;

@@ -1,29 +1,11 @@
-// import { useState } from "react";
-import { useDispatch } from "react-redux";
-import { useNavigate } from "react-router-dom";
-import { fetchArticleSearch } from "../../features/article/articleSlice";
-import { Link, useLocation } from "react-router-dom";
-
-import { useEffect, useState } from "react";
+import { NavLink, useLocation } from "react-router-dom";
+import { useEffect } from "react";
+import logo1 from "../assets/icons/logo-1.png";
 
 const MyNavbar = () => {
   const location = useLocation().pathname;
   const hamburger = document.querySelector("#hamburger");
   const navMenu = document.querySelector("#nav-menu");
-  const [searchInput, setSearchInput] = useState("");
-  const dispatch = useDispatch();
-  const navigate = useNavigate();
-
-  const searchChange = (e) => {
-    setSearchInput(e.target.value);
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-
-    dispatch(fetchArticleSearch({ searchInput }));
-    navigate("/search");
-  };
 
   useEffect(() => {
     console.log(location);
@@ -31,16 +13,16 @@ const MyNavbar = () => {
     window.onscroll = function () {
       const header = document.querySelector("header");
       const fixedNav = header.offsetTop;
-      // const toTop = document.querySelector("#to-top");
+      const toTop = document.querySelector("#to-top");
 
       if (window.pageYOffset > fixedNav) {
         header.classList.add("navbar-fixed");
-        // toTop.classList.remove("hidden");
-        // toTop.classList.add("flex");
+        toTop.classList.remove("hidden");
+        toTop.classList.add("flex");
       } else {
         header.classList.remove("navbar-fixed");
-        // toTop.classList.remove("flex");
-        // toTop.classList.add("hidden");
+        toTop.classList.remove("flex");
+        toTop.classList.add("hidden");
       }
     };
 
@@ -68,12 +50,12 @@ const MyNavbar = () => {
         <div className="flex items-center justify-between relative">
           <div className="px-4">
             {location === "/" ? (
-              <a href="#home" className="font-bold text-lg text-primary block py-6">
-                News API
+              <a href="#home" className="font-bold text-lg text-primary block py-6 lg:py-3">
+                <img src={logo1} alt="" className="w-16" />
               </a>
             ) : (
-              <a href="/" className="font-bold text-lg text-primary block py-6">
-                News API
+              <a href="/" className="font-bold text-lg text-primary block py-6 lg:py-3">
+                <img src={logo1} alt="" className="w-16" />
               </a>
             )}
           </div>
@@ -84,34 +66,30 @@ const MyNavbar = () => {
               <span className="hamburger-line origin-bottom-left transition duration-300"></span>
             </button>
 
-            <nav id="nav-menu" className="hidden absolute py-5 bg-white shadow-lg rounded-lg max-w-[250px] w-full right-4 top-full lg:block lg:static lg:bg-transparent lg:max-w-full lg:shadow-none lg:rounded-none">
+            <nav id="nav-menu" className="hidden absolute py-5 lg:py-2 bg-white shadow-lg rounded-lg max-w-[250px] w-full right-4 top-full lg:block lg:static lg:bg-transparent lg:max-w-full lg:shadow-none lg:rounded-none">
               <div className="block lg:flex lg:items-center">
                 <ul className="block lg:flex">
                   <li className="group">
-                    <Link to="/indonesia" className="text-base  text-dark py-2 mx-6 flex group-hover:text-primary">
+                    <NavLink to="/indonesia" className={({ isActive }) => (isActive ? "text-base  text-dark py-2 mx-6 flex font-bold group-hover:text-primary" : "text-base  text-dark py-2 mx-6 flex group-hover:text-primary ")}>
                       Indonesia
-                    </Link>
+                    </NavLink>
                   </li>
                   <li className="group">
-                    <Link to="/programming" className="text-base  text-dark py-2 mx-6 flex group-hover:text-primary">
+                    <NavLink to="/programming" className={({ isActive }) => (isActive ? "text-base  text-dark py-2 mx-6 flex font-bold group-hover:text-primary" : "text-base  text-dark py-2 mx-6 flex group-hover:text-primary ")}>
                       Programming
-                    </Link>
+                    </NavLink>
                   </li>
                   <li className="group">
-                    <Link to="/covid-19" className="text-base  text-dark py-2 mx-6 flex group-hover:text-primary">
+                    <NavLink to="/covid-19" className={({ isActive }) => (isActive ? "text-base  text-dark py-2 mx-6 flex font-bold group-hover:text-primary" : "text-base text-dark py-2 mx-6 flex group-hover:text-primary ")}>
                       Covid-19
-                    </Link>
+                    </NavLink>
                   </li>
                   <li className="group">
-                    <Link to="/saved" className="text-base  text-dark py-2 mx-6 flex group-hover:text-primary">
+                    <NavLink to="/saved" className={({ isActive }) => (isActive ? "text-base  text-dark py-2 mx-6 flex font-bold group-hover:text-primary" : "text-base  text-dark py-2 mx-6 flex group-hover:text-primary ")}>
                       Saved
-                    </Link>
+                    </NavLink>
                   </li>
                 </ul>
-                <form onSubmit={handleSubmit} className="mx-6 flex">
-                  <input type="text" onChange={searchChange} className="text-base border border-primary md:border-none rounded-lg mr-3 px-2 w-1/2" />
-                  <button className="py-1 px-3 w-1/2 md:w-1/3 bg-primary rounded-lg text-secondary transition duration-200 hover:opacity-80">Search</button>
-                </form>
               </div>
             </nav>
           </div>

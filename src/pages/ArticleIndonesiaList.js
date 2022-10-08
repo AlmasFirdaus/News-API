@@ -1,29 +1,24 @@
-import { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { fetchArticleIndonesia } from "../features/article/articleSlice";
-// import ArticlePending from "../component/articlePending/ArticlePending";
-import ArticleFulfilled from "../component/articleFulfilled/ArticleFulfilled";
-// import ArticleTitle from "../component/articleTitle/ArticleTitle";
+import { useEffect, useState } from "react";
+import { dataIndonesia } from "../features/dataJson";
+import ArticleFulfilled from "../component/ArticleFulfilled";
+import ArticleTitle from "../component/ArticleTitle";
+import IsPending from "../component/IsPending";
 
 const ArticleIndonesiaList = () => {
-  const indonesiaState = useSelector((state) => state.article);
-  const articleIndonesias = indonesiaState.entitiesIndonesia;
-  const dispatch = useDispatch();
-
+  const [article, setArticle] = useState(null);
   useEffect(() => {
-    dispatch(fetchArticleIndonesia());
-  }, [dispatch]);
+    dataIndonesia().then((res) => {
+      setArticle(res);
+    });
+  }, []);
 
   return (
     <>
-      <section id="home-article" className="pt-36 pb-32">
+      <section id="home" className="pt-24 pb-32">
         <div className="container px-20">
-          <h1 className="font-bold text-3xl text-center mb-20">News Indonesia</h1>
-          <div className="grid justify-center md:grid-cols-2 md:gap-5 xl:grid-cols-4">
-            {articleIndonesias.map((articleFetch, index) => (
-              <ArticleFulfilled articleFetch={articleFetch} index={index} category="Indonesia" key={index} />
-            ))}
-          </div>
+          {!article && <IsPending />}
+          {article && <ArticleTitle title="Indonesia" />}
+          <div className="grid justify-center md:grid-cols-2 md:gap-8 xl:grid-cols-4">{article && article.map((articleFetch, index) => <ArticleFulfilled articleFetch={articleFetch} index={index} category="Indonesia" key={index} />)}</div>
         </div>
       </section>
     </>

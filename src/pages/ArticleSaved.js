@@ -1,7 +1,7 @@
 import { useSelector } from "react-redux";
-// import ArticlePending from "../component/articlePending/ArticlePending";
-import ArticleFulfilled from "../component/articleFulfilled/ArticleFulfilled";
-// import ArticleTitle from "../component/articleTitle/ArticleTitle";
+import ArticleFulfilled from "../component/ArticleFulfilled";
+import ArticleTitle from "../component/ArticleTitle";
+import IsPending from "../component/IsPending";
 
 const ArticleSaved = () => {
   const newState = useSelector((state) => state.article);
@@ -10,14 +10,17 @@ const ArticleSaved = () => {
   console.log("Saved", articleSaveds);
   return (
     <>
-      <section id="saved" className="pt-36 pb-32 ">
+      <section id="home" className="pt-24 pb-32 min-h-screen ">
         <div className="container px-20">
-          <h1 className="font-bold text-3xl text-center mb-20">News Saved</h1>
-          <div className="grid justify-center md:grid-cols-2 xl:grid-cols-4 xl:gap-5">
-            {articleSaveds.map((articleFetch, index) => (
-              <ArticleFulfilled articleFetch={articleFetch} index={index} category="Saved" key={index} />
-            ))}
-          </div>
+          {newState.isFetchPending && <IsPending />}
+          {!newState.isFetchPending && <ArticleTitle title="saved" />}
+          {newState.isFetchSuccess && (
+            <div className="grid justify-center md:grid-cols-2 xl:grid-cols-4 xl:gap-5">
+              {articleSaveds.map((articleFetch, index) => (
+                <ArticleFulfilled articleFetch={articleFetch} index={index} category="Saved" key={index} />
+              ))}
+            </div>
+          )}
         </div>
       </section>
     </>

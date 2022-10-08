@@ -1,5 +1,7 @@
 import React from "react";
 import ArticleIndonesiaList from "./ArticleIndonesiaList";
+import ArticleProgrammingList from "./ArticleProgrammingList ";
+import ArticleCovid19List from "./ArticleCovid19List";
 
 const Home = () => {
   return (
@@ -11,17 +13,16 @@ const Home = () => {
         >
           <div className="container h-1/2">
             <div className="w-full lg:w-1/2">
-              <h1 className="font-bold text-slate-200 text-2xl lg:text-3xl">Newspaper From News API Lorem, ipsum dolor sit amet consectetur adipisicing elit. Magnam, rerum.</h1>
-              <p className="font-medium text-slate-300 text-md pt-5 lg:text-lg">
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Facilis voluptas iure, minus officia molestias magnam ratione omnis! Iure officiis similique ipsam nesciunt expedita dicta iste necessitatibus vitae tempore deserunt!
-                Perferendis.
-              </p>
+              <h1 className="font-bold text-slate-200 text-2xl lg:text-5xl capitalize">Search worldwide news with code</h1>
+              <p className="font-medium text-slate-300 text-md pt-5 lg:text-2xl">Locate articles and breaking news headlines from news sources and blogs across the web with our JSON API</p>
             </div>
           </div>
         </div>
       </section>
 
       <ArticleIndonesiaList />
+      <ArticleProgrammingList />
+      <ArticleCovid19List />
     </>
   );
 };

@@ -1,10 +1,9 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-// import noImage from "../../assets/image/no-image.png";
-import heart from "../../assets/icons/heart.png";
-import heartFill from "../../assets/icons/heart-fill.png";
+import heart from "../assets/icons/heart.png";
+import heartFill from "../assets/icons/heart-fill.png";
 
-import { articleSaved, articleUnSaved } from "../../features/article/articleSlice";
+import { articleSaved, articleUnSaved } from "../features/article/articleSlice";
 
 const ArticleFulfilled = ({ articleFetch, index }) => {
   const saved = useSelector((state) => state.article.entitiesSaved);
@@ -24,24 +23,23 @@ const ArticleFulfilled = ({ articleFetch, index }) => {
     <div className="w-full flex justify-between">
       <div className="bg-slate-100 rounded-xl shadow-lg overflow-hidden flex flex-col mb-10 relative">
         <div className="flex-1">
-          <a href={articleFetch.url} className="transition duration-300 hover:brightness-75">
+          <a href={articleFetch.url} className="transition duration-300 hover:brightness-75" target="_blank" rel="noopener noreferrer">
             <img src={articleFetch.urlToImage} alt={articleFetch.title} className="object-cover h-[12rem]" />
           </a>
-          <div className="px-8 py-6">
-            <a href={articleFetch.url} className="text-md xl:text-xl font-bold mb-3 transition duration-200 hover:text-secondary">
+          <div className="px-7 py-6">
+            <a href={articleFetch.url} className="text-md xl:text-xl font-bold mb-3 transition duration-200 hover:text-secondary" target="_blank" rel="noopener noreferrer">
               {articleFetch.title}
             </a>
-            {/* <p className="text-lg font-medium mb-8">{articleFetch.description}</p> */}
           </div>
         </div>
-        <div className="flex px-8 py-6">
+        <div className="flex px-7 py-6">
           <div className="flex items-center mr-6">
             <img src="https://cdn-icons-png.flaticon.com/512/2202/2202112.png" alt="" className="w-7 rounded-full" />
-            <span className="text-xs ml-3 opacity-75 grayscale">{articleFetch.source.name}</span>
+            <span className="text-xs ml-3 opacity-75 grayscale truncate">{articleFetch.source.name}</span>
           </div>
           <div className="flex items-center">
             <img src="https://cdn-icons-png.flaticon.com/512/2838/2838779.png" alt="" className="w-5 opacity-75 grayscale" />
-            <span className="text-xs ml-3 opacity-75 grayscale">06-10-2022</span>
+            <span className="text-xs ml-3 opacity-75 grayscale">{articleFetch.publishedAt.substr(0, 10)}</span>
           </div>
         </div>
         {!isSaved ? (
