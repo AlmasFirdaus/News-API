@@ -50,12 +50,12 @@ const MyNavbar = () => {
         <div className="flex items-center justify-between relative">
           <div className="px-4">
             {location === "/" ? (
-              <a href="#home" className="font-bold text-lg text-primary block py-6 lg:py-3">
-                <img src={logo1} alt="" className="w-16" />
+              <a href="#home" className="font-bold text-lg text-primary block py-3 lg:py-3">
+                <img src={logo1} alt="" className="w-10 lg:w-16" />
               </a>
             ) : (
-              <a href="/" className="font-bold text-lg text-primary block py-6 lg:py-3">
-                <img src={logo1} alt="" className="w-16" />
+              <a href="/" className="font-bold text-lg text-primary block py-3 lg:py-3">
+                <img src={logo1} alt="" className="w-10 lg:w-16" />
               </a>
             )}
           </div>

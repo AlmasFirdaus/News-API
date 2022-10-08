@@ -37,7 +37,7 @@ const ArticleFulfilled = ({ articleFetch, index }) => {
             <img src="https://cdn-icons-png.flaticon.com/512/2202/2202112.png" alt="" className="w-7 rounded-full" />
             <span className="text-xs ml-3 opacity-75 grayscale truncate">{articleFetch.source.name}</span>
           </div>
-          <div className="flex items-center">
+          <div className="hidden items-center lg:flex">
             <img src="https://cdn-icons-png.flaticon.com/512/2838/2838779.png" alt="" className="w-5 opacity-75 grayscale" />
             <span className="text-xs ml-3 opacity-75 grayscale">{articleFetch.publishedAt.substr(0, 10)}</span>
           </div>
