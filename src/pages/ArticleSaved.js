@@ -9,8 +9,8 @@ const ArticleSaved = () => {
 
   console.log("Saved", articleSaveds);
   return (
-    <>
-      <section id="home" className="pt-24 pb-32 min-h-screen ">
+    <div id="home">
+      <section id="articleSaved" className="pt-24 pb-32 min-h-screen ">
         <div className="container px-20">
           {newState.isFetchPending && <IsPending />}
           {!newState.isFetchPending && <ArticleTitle title="saved" />}
@@ -23,7 +23,7 @@ const ArticleSaved = () => {
           )}
         </div>
       </section>
-    </>
+    </div>
   );
 };
 

@@ -1,8 +1,13 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import logo from "../assets/icons/logo-1.png";
 
 const Footer = () => {
+  const location = useLocation().pathname;
+  function topFunction() {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+  }
   return (
     <footer className="bg-dark pt-24 pb-12">
       <div className="container">
@@ -31,27 +36,51 @@ const Footer = () => {
             <h3 className="mb-5 text-xl font-semibold text-white">Navigation</h3>
             <ul className="text-slate-300">
               <li>
-                <a href="#home" className="mb-3 inline-block text-base hover:text-primary">
-                  Home
-                </a>
+                {location === "/" ? (
+                  <a href="#home" className="mb-3 inline-block text-base hover:text-primary">
+                    Home
+                  </a>
+                ) : (
+                  <Link to="/" onClick={topFunction} className="mb-3 inline-block text-base hover:text-primary">
+                    Home
+                  </Link>
+                )}
               </li>
               <li>
-                <Link to="/indonesia" className="mb-3 inline-block text-base hover:text-primary">
-                  Indonesia
-                </Link>
+                {location === "/" ? (
+                  <a href="#articleIndonesia" className="mb-3 inline-block text-base hover:text-primary">
+                    Indonesia
+                  </a>
+                ) : (
+                  <Link to="/indonesia" onClick={topFunction} className="mb-3 inline-block text-base hover:text-primary">
+                    Indonesia
+                  </Link>
+                )}
               </li>
               <li>
-                <Link to="/programming" className="mb-3 inline-block text-base hover:text-primary">
-                  Programming
-                </Link>
+                {location === "/" ? (
+                  <a href="#articleProgramming" className="mb-3 inline-block text-base hover:text-primary">
+                    Programming
+                  </a>
+                ) : (
+                  <Link to="/programming" onClick={topFunction} className="mb-3 inline-block text-base hover:text-primary">
+                    Programming
+                  </Link>
+                )}
               </li>
               <li>
-                <Link to="/covid-19" className="mb-3 inline-block text-base hover:text-primary">
-                  Covid-19
-                </Link>
+                {location === "/" ? (
+                  <a href="#articleCovid" className="mb-3 inline-block text-base hover:text-primary">
+                    Covid-19
+                  </a>
+                ) : (
+                  <Link to="/covid-19" onClick={topFunction} className="mb-3 inline-block text-base hover:text-primary">
+                    Covid-19
+                  </Link>
+                )}
               </li>
               <li>
-                <Link to="/saved" className="mb-3 inline-block text-base hover:text-primary">
+                <Link to="/saved" onClick={topFunction} className="mb-3 inline-block text-base hover:text-primary">
                   Saved
                 </Link>
               </li>

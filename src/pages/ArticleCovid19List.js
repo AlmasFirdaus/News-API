@@ -13,15 +13,15 @@ const ArticleCovid19List = () => {
   }, []);
 
   return (
-    <>
-      <section id="home" className="pt-24 pb-32">
+    <section id="home">
+      <section id="articleCovid" className="pt-24 pb-32">
         <div className="container px-20">
           {!article && <IsPending />}
           {article && <ArticleTitle title="Covid-19" />}
           <div className="grid justify-center md:grid-cols-2 md:gap-8 xl:grid-cols-4">{article && article.map((articleFetch, index) => <ArticleFulfilled articleFetch={articleFetch} index={index} category="Indonesia" key={index} />)}</div>
         </div>
       </section>
-    </>
+    </section>
   );
 };
 
