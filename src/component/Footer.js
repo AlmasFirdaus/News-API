@@ -127,7 +127,7 @@ const Footer = () => {
           </div>
           <p className="text-center text-xs font-medium text-slate-500">
             Dibuat dengan <span className="text-pink-500">❤️</span> oleh{" "}
-            <a href="https://instagram.com/sandhikagalih" target="_blank" rel="noopener noreferrer" className="font-bold text-primary transition duration-300 hover:text-secondary">
+            <a href="https://instagram.com/almasfirdaus_" target="_blank" rel="noopener noreferrer" className="font-bold text-primary transition duration-300 hover:text-secondary">
               Almas Firdaus.
             </a>
           </p>
