@@ -30,6 +30,11 @@ const Footer = () => {
                   TailwindCSS
                 </a>
               </li>
+              <li>
+                <a href="https://www.instagram.com/revinarahmadilla" target="_blank" rel="noreferrer noopener" className="mb-3 inline-block text-base hover:text-primary">
+                  Logo
+                </a>
+              </li>
             </ul>
           </div>
           <div className="mb-12 w-full px-4 md:w-1/3">
