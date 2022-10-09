@@ -13,7 +13,7 @@ const Home = () => {
         >
           <div className="container h-1/2">
             <div className="w-full md:w-2/3 lg:w-1/2">
-              <h1 className="font-bold text-slate-200 text-lg md:text-xl lg:text-5xl capitalize">Search worldwide news with code</h1>
+              <h1 className="font-bold text-slate-200 text-lg md:text-xl lg:text-5xl capitalize">Search worldwide news with codesss</h1>
               <p className="font-medium text-slate-300 text-base md:text-lg pt-5 lg:text-2xl">Locate articles and breaking news headlines from news sources and blogs across the web with our JSON API</p>
             </div>
           </div>
