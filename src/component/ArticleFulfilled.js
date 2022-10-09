@@ -24,7 +24,7 @@ const ArticleFulfilled = ({ articleFetch, index }) => {
       <div className="bg-slate-100 rounded-xl shadow-lg overflow-hidden flex flex-col mb-10 relative">
         <div className="flex-1">
           <a href={articleFetch.url} className="transition duration-300 hover:brightness-75" target="_blank" rel="noopener noreferrer">
-            <img src={articleFetch.urlToImage} alt={articleFetch.title} className="object-cover h-[12rem]" />
+            <img src={articleFetch.urlToImage} alt={articleFetch.title} className="object-cover w-full h-44 md:h-[12rem]" />
           </a>
           <div className="px-7 py-6">
             <a href={articleFetch.url} className="text-md xl:text-xl font-bold mb-3 transition duration-200 hover:text-secondary" target="_blank" rel="noopener noreferrer">
