@@ -4,10 +4,10 @@ import logo from "../assets/icons/logo-1.png";
 
 const Footer = () => {
   const location = useLocation().pathname;
-  function topFunction() {
+  const topFunction = () => {
     document.body.scrollTop = 0;
     document.documentElement.scrollTop = 0;
-  }
+  };
   return (
     <footer className="bg-dark pt-24 pb-12">
       <div className="container">

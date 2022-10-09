@@ -44,6 +44,11 @@ const MyNavbar = () => {
     navMenu.classList.toggle("hidden");
   };
 
+  const topFunction = () => {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+  };
+
   return (
     <header className="bg-transparent absolute top-0 left-0 w-full flex items-center z-10 ">
       <div className="container px-8 md:px-20">
@@ -70,22 +75,38 @@ const MyNavbar = () => {
               <div className="block lg:flex lg:items-center">
                 <ul className="block lg:flex">
                   <li className="group">
-                    <NavLink to="/indonesia" className={({ isActive }) => (isActive ? "text-base  text-dark py-2 mx-6 flex font-bold group-hover:text-primary" : "text-base  text-dark py-2 mx-6 flex group-hover:text-primary ")}>
+                    <NavLink
+                      to="/indonesia"
+                      onClick={topFunction}
+                      className={({ isActive }) => (isActive ? "text-base  text-dark py-2 mx-6 flex font-bold group-hover:text-primary" : "text-base  text-dark py-2 mx-6 flex group-hover:text-primary ")}
+                    >
                       Indonesia
                     </NavLink>
                   </li>
                   <li className="group">
-                    <NavLink to="/programming" className={({ isActive }) => (isActive ? "text-base  text-dark py-2 mx-6 flex font-bold group-hover:text-primary" : "text-base  text-dark py-2 mx-6 flex group-hover:text-primary ")}>
+                    <NavLink
+                      to="/programming"
+                      onClick={topFunction}
+                      className={({ isActive }) => (isActive ? "text-base  text-dark py-2 mx-6 flex font-bold group-hover:text-primary" : "text-base  text-dark py-2 mx-6 flex group-hover:text-primary ")}
+                    >
                       Programming
                     </NavLink>
                   </li>
                   <li className="group">
-                    <NavLink to="/covid-19" className={({ isActive }) => (isActive ? "text-base  text-dark py-2 mx-6 flex font-bold group-hover:text-primary" : "text-base text-dark py-2 mx-6 flex group-hover:text-primary ")}>
+                    <NavLink
+                      to="/covid-19"
+                      onClick={topFunction}
+                      className={({ isActive }) => (isActive ? "text-base  text-dark py-2 mx-6 flex font-bold group-hover:text-primary" : "text-base text-dark py-2 mx-6 flex group-hover:text-primary ")}
+                    >
                       Covid-19
                     </NavLink>
                   </li>
                   <li className="group">
-                    <NavLink to="/saved" className={({ isActive }) => (isActive ? "text-base  text-dark py-2 mx-6 flex font-bold group-hover:text-primary" : "text-base  text-dark py-2 mx-6 flex group-hover:text-primary ")}>
+                    <NavLink
+                      to="/saved"
+                      onClick={topFunction}
+                      className={({ isActive }) => (isActive ? "text-base  text-dark py-2 mx-6 flex font-bold group-hover:text-primary" : "text-base  text-dark py-2 mx-6 flex group-hover:text-primary ")}
+                    >
                       Saved
                     </NavLink>
                   </li>
