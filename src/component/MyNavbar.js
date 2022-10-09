@@ -78,7 +78,7 @@ const MyNavbar = () => {
                     <NavLink
                       to="/indonesia"
                       onClick={topFunction}
-                      className={({ isActive }) => (isActive ? "text-base  text-dark py-2 mx-6 flex font-bold group-hover:text-primary" : "text-base  text-dark py-2 mx-6 flex group-hover:text-primary ")}
+                      className={({ isActive }) => (isActive ? "text-base  text-primary py-2 mx-6 flex font-bold group-hover:text-dark" : "text-base  text-primary py-2 mx-6 flex group-hover:text-dark ")}
                     >
                       Indonesia
                     </NavLink>
@@ -87,7 +87,7 @@ const MyNavbar = () => {
                     <NavLink
                       to="/programming"
                       onClick={topFunction}
-                      className={({ isActive }) => (isActive ? "text-base  text-dark py-2 mx-6 flex font-bold group-hover:text-primary" : "text-base  text-dark py-2 mx-6 flex group-hover:text-primary ")}
+                      className={({ isActive }) => (isActive ? "text-base  text-primary py-2 mx-6 flex font-bold group-hover:text-dark" : "text-base  text-primary py-2 mx-6 flex group-hover:text-dark ")}
                     >
                       Programming
                     </NavLink>
@@ -96,7 +96,7 @@ const MyNavbar = () => {
                     <NavLink
                       to="/covid-19"
                       onClick={topFunction}
-                      className={({ isActive }) => (isActive ? "text-base  text-dark py-2 mx-6 flex font-bold group-hover:text-primary" : "text-base text-dark py-2 mx-6 flex group-hover:text-primary ")}
+                      className={({ isActive }) => (isActive ? "text-base  text-primary py-2 mx-6 flex font-bold group-hover:text-dark" : "text-base text-primary py-2 mx-6 flex group-hover:text-dark ")}
                     >
                       Covid-19
                     </NavLink>
@@ -105,7 +105,7 @@ const MyNavbar = () => {
                     <NavLink
                       to="/saved"
                       onClick={topFunction}
-                      className={({ isActive }) => (isActive ? "text-base  text-dark py-2 mx-6 flex font-bold group-hover:text-primary" : "text-base  text-dark py-2 mx-6 flex group-hover:text-primary ")}
+                      className={({ isActive }) => (isActive ? "text-base  text-primary py-2 mx-6 flex font-bold group-hover:text-dark" : "text-base  text-primary py-2 mx-6 flex group-hover:text-dark ")}
                     >
                       Saved
                     </NavLink>
